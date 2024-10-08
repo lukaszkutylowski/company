@@ -1,6 +1,5 @@
 package com.company.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,15 +12,9 @@ public class Company {
     private String name;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    @JsonManagedReference
     private List<Department> departments;
 
     public Company() {}
-
-//    public Company(String name) {
-//        this.name = name;
-//    }
-
 
     public Company(String name, List<Department> departments) {
         this.name = name;

@@ -23,13 +23,15 @@ public class CompanyController {
     }
 
     @PostMapping("/company")
-    public Company saveCompany(@RequestBody Company company) {
-        return service.saveUpdateCompany(company);
+    public ResponseEntity<Company> saveCompany(@RequestBody Company company) {
+        Company savedEntity = service.saveUpdateCompany(company);
+        return ResponseEntity.ok(savedEntity);
     }
 
     @PutMapping("/company")
-    public Company updateCompany(@RequestBody Company company) {
-        return service.saveUpdateCompany(company);
+    public ResponseEntity<Company> updateCompany(@RequestBody Company company) {
+        Company updatedCompany = service.saveUpdateCompany(company);
+        return ResponseEntity.ok(updatedCompany);
     }
 
     @DeleteMapping(path = "/company/{id}")

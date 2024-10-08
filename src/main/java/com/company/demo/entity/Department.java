@@ -1,8 +1,6 @@
 package com.company.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,21 +14,13 @@ public class Department {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-//    @JsonBackReference
     @JsonIgnore
     private Company company;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    @JsonManagedReference
     private List<Team> teams;
 
     public Department() {}
-
-//    public Department(String name, Company company) {
-//        this.name = name;
-//        this.company = company;
-//    }
-
 
     public Department(String name, Company company, List<Team> teams) {
         this.name = name;

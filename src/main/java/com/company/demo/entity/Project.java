@@ -1,6 +1,5 @@
 package com.company.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -12,7 +11,6 @@ public class Project {
 
     @ManyToOne
     @JoinColumn(name = "team_id")
-//    @JsonBackReference
     @JsonIgnore
     private Team team;
 
@@ -20,12 +18,6 @@ public class Project {
     private Manager manager;
 
     public Project() {}
-
-//    public Project(Team team, Manager manager) {
-//        this.team = team;
-//        this.manager = manager;
-//    }
-
 
     public Project(Team team, Manager manager) {
         this.team = team;
