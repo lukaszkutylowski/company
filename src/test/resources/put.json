@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "name": "Change Example Company Name 2",
+  "departments": [
+    {
+      "id": 1,
+      "name": "Change Example Department Name 2",
+      "teams": [
+        {
+          "id": 1,
+          "name": "Example Team Name 1",
+          "projects": [
+            {
+              "id": 1,
+              "manager": {
+                "id": 1,
+                "contactInformation": "Change Example contactInformation 2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
